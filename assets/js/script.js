@@ -87,9 +87,16 @@ btnOcultar[2].addEventListener('click', () => {
 
 //----------------< Button Cadastrar >
 
-const buttonCadastrar = document.querySelector('#btn-cadastrar');
+const buttonCadastrar = document.querySelectorAll('#btn-cadastrar');
 
-buttonCadastrar.addEventListener('click', () => {
+buttonCadastrar[0].addEventListener('click', () => {
+  window.scrollTo({
+    top: 900,
+    left:0
+  })
+});
+
+buttonCadastrar[1].addEventListener('click', () => {
   window.scrollTo({
     top: 900,
     left:0
@@ -142,6 +149,8 @@ const buttonAlunos = document.querySelector('#dropdown-options-aluno');
 const buttonDisciplinas = document.querySelector('#dropdown-options-disciplinas');
 const buttonCursos = document.querySelector('#dropdown-options-cursos');
 const fieldsCadastro = document.querySelectorAll('.cadastro form');
+const fieldsExcluir = document.querySelectorAll('.excluir');
+const linhaVertical = document.querySelector('#linha-vertical');
 let isActiveDropdownOptions = true;
 let isActiveFieldCadastro = true;
 
@@ -160,6 +169,13 @@ buttonAlunos.addEventListener('click', () => {
   fieldsCadastro[0].style.display = 'flex';
   fieldsCadastro[1].style.display = 'none';
   fieldsCadastro[2].style.display = 'none';
+
+  fieldsExcluir[0].style.display = 'flex';
+  fieldsExcluir[1].style.display = 'none';
+  fieldsExcluir[2].style.display = 'none';
+
+  textoFieldForms.style.display = 'none';
+  linhaVertical.style.marginRight = '49%';
 });
 
 buttonDisciplinas.addEventListener('click', () => {
@@ -167,6 +183,13 @@ buttonDisciplinas.addEventListener('click', () => {
   fieldsCadastro[1].style.display = 'flex';
   fieldsCadastro[0].style.display = 'none';
   fieldsCadastro[2].style.display = 'none';
+
+  fieldsExcluir[1].style.display = 'flex';
+  fieldsExcluir[0].style.display = 'none';
+  fieldsExcluir[2].style.display = 'none';
+
+  textoFieldForms.style.display = 'none';
+  linhaVertical.style.marginRight = '49%';
 });
 
 buttonCursos.addEventListener('click', () => {
@@ -174,4 +197,44 @@ buttonCursos.addEventListener('click', () => {
   fieldsCadastro[2].style.display = 'flex';
   fieldsCadastro[0].style.display = 'none';
   fieldsCadastro[1].style.display = 'none';
+
+  fieldsExcluir[2].style.display = 'flex';
+  fieldsExcluir[0].style.display = 'none';
+  fieldsExcluir[1].style.display = 'none';
+
+  textoFieldForms.style.display = 'none';
+  linhaVertical.style.marginRight = '49%';
 });
+
+//===================================================================
+
+//----------------< Button Excluir >
+
+const buttonExcluir = document.querySelector('#btn-excluir');
+const formExcluir = document.querySelectorAll('.excluir');
+const textoFieldForms = document.querySelector('#txt-forms');
+let isActiveButtonExcluir = true;
+
+buttonExcluir.addEventListener('click', () => {
+  window.scrollTo({
+    top: 800,
+    left:0
+  })
+
+  if(isActiveButtonExcluir) {
+    isActiveButtonExcluir = false;
+    formExcluir[0].style.display = 'flex';
+    formExcluir[1].style.display = 'none';
+    formExcluir[2].style.display = 'none';
+    textoFieldForms.style.display = 'none';
+    linhaVertical.style.marginRight = '49%';
+  } else {
+    isActiveButtonExcluir = true;
+    formExcluir[0].style.display = 'none';
+    formExcluir[1].style.display = 'none';
+    formExcluir[2].style.display = 'none';
+    textoFieldForms.style.display = 'flex';
+    linhaVertical.style.marginRight = '100px';
+  }
+});
+

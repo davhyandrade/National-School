@@ -1,73 +1,27 @@
 @import 'colors';
 
 .position-field-forms {
-    .field-dropdown-options {
-        position: absolute;
-        top: 90px;
-        left: 5%;
-        cursor: pointer;
-
-        .btn-options {
-            padding: 7px 25px;
-            background: $primaryColorField;
-            color: white;
-            border-radius: 15px;
-
-            &:hover {
-                transition: 1s;
-                opacity: 50%;
-            }
-
-            &:active {
-                transition: 0.1s;
-                opacity: 100%;
-                background: $thirdColor;
-            }
-
-        }
-
-        ul {
-            z-index: 99;
-
-            li  {
-                color: #333;
-                z-index: 99;
-                cursor: pointer;
-                padding: 7px 25px;
-                border: 2px solid transparent;
-                border-radius: 15px;
-                margin: 10px;
-
-                &:hover {
-                    transition: 2s;
-                    color: $thirdColor;
-                    font-weight: bold;
-                }
-            }
-        }
-    }
-
-    & > div {
-        display: flex;
+    .excluir {
         align-items: center;
-        margin-right: 4%;
+        position: absolute;
+        right: 35%;
+        display: none;
+        z-index: 10;
 
-        form {
-            position: absolute;
-            width: 30vw;
+        form { 
+            width: 25vw;
             padding: 60px;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             border-radius: 5px;
-            margin-bottom: 30px;
 
             h1 {
                 font-size: 25px;
+                font-weight: normal;
                 color: rgb(3, 42, 72);
                 margin-bottom: 30px;
-                font-weight: normal;
             }
 
             div {
@@ -104,7 +58,7 @@
                 }
             }
 
-            .btn-submit {
+            .btn-submit-excluir {
                 padding: 10px 30px;
                 width: 100%;
                 border-radius: 5px;
@@ -125,29 +79,6 @@
                     background: black;
                 }
             }
-
-            h5 {
-                margin-top: 30px;
-                font-size: 20px;
-                font-weight: normal;
-                color: #007200;
-            }
         }
-
-        form:nth-child(2) {
-            display: none;
-        }
-
-        form:nth-child(3) {
-            display: none;
-        }
-    }
-
-    p {
-        width: 55%;
-        display: flex;
-        align-items: center;
-        color: rgba(51, 51, 51, 0.692);
-        font-size: 15px;
     }
 }

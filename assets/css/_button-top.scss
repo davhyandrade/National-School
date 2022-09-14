@@ -1,0 +1,17 @@
+.btn-top {
+    position: fixed;
+    right: 2vw;
+    top: 88vh;
+    background: #444444;
+    padding: 12px 10px;
+    border-radius: 5px;
+    z-index: 100;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 17px;
+    }
+}

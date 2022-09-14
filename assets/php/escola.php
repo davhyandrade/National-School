@@ -85,6 +85,24 @@ class aluno
             echo 'Erro ao salvar o registro - ' . $exc->getMessage();
         }
     }
+
+    function excluir() {
+        try {
+            $this->conn = new Conectar();
+            $sql = $this->conn->prepare("delete from aluno where Matricula = ?");
+            @$sql-> bindParam(1, $this->getMatricula(), PDO::PARAM_STR);
+            if($sql->execute() == 1) {
+                return "Excluido com sucesso!!";
+            } else {
+                return "Erro na exclusao!!";
+            }
+
+            $this->conn = null;
+        }
+        catch(PDOException $exc) {
+            echo "Erro ao excluir - " . $exc->getMessage();
+        }
+    }
 } 
 
 class curso
@@ -170,6 +188,24 @@ class curso
             echo 'Erro ao salvar o registro - ' . $exc->getMessage();
         }
     }
+
+    function excluir() {
+        try {
+            $this->conn = new Conectar();
+            $sql = $this->conn->prepare("delete from curso where CodCurso = ?");
+            @$sql-> bindParam(1, $this->getCodCurso(), PDO::PARAM_STR);
+            if($sql->execute() == 1) {
+                return "Excluido com sucesso!!";
+            } else {
+                return "Erro na exclusao!!";
+            }
+
+            $this->conn = null;
+        }
+        catch(PDOException $exc) {
+            echo "Erro ao excluir - " . $exc->getMessage();
+        }
+    }
 } 
 
 class disciplinas
@@ -223,6 +259,24 @@ class disciplinas
         }   
         catch(PDOException $exc) {
             echo 'Erro ao salvar o registro - ' . $exc->getMessage();
+        }
+    }
+
+    function excluir() {
+        try {
+            $this->conn = new Conectar();
+            $sql = $this->conn->prepare("delete from disciplinas where CodDisciplina = ?");
+            @$sql-> bindParam(1, $this->getId(), PDO::PARAM_STR);
+            if($sql->execute() == 1) {
+                return "Excluido com sucesso!!";
+            } else {
+                return "Erro na exclusao!!";
+            }
+
+            $this->conn = null;
+        }
+        catch(PDOException $exc) {
+            echo "Erro ao excluir - " . $exc->getMessage();
         }
     }
 } 

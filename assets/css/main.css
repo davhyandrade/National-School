@@ -105,101 +105,6 @@ ul li {
   margin: 20px;
 }
 
-.btn-top {
-  position: fixed;
-  right: 2vw;
-  top: 88vh;
-  background: #444444;
-  padding: 12px 10px;
-  border-radius: 5px;
-  z-index: 100;
-  cursor: pointer;
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-.btn-top img {
-  width: 17px;
-}
-
-.landing-page {
-  width: 100%;
-  height: 100vh;
-  background: url(https://i.postimg.cc/rwtPQMfY/Sem-T-tulo-1.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.landing-page .field-landing-page {
-  width: 60%;
-  margin-top: 70px;
-}
-.landing-page .field-landing-page h1:nth-child(1) {
-  color: white;
-  font-size: 35px;
-}
-.landing-page .field-landing-page h1:nth-child(2) {
-  color: white;
-  font-size: 70px;
-}
-.landing-page .field-landing-page a {
-  background: white;
-  padding: 15px 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 210px;
-  margin-top: 15px;
-  border-radius: 7px;
-  font-weight: bold;
-  color: #214c66;
-}
-.landing-page .field-landing-page a:hover {
-  transition: 1s;
-  background: rgba(255, 255, 255, 0.248);
-  color: white;
-}
-.landing-page .field-landing-page #img-aluna {
-  position: absolute;
-  bottom: 0;
-  right: 12vw;
-  width: 45vw;
-  z-index: 2;
-}
-.landing-page .field-landing-page #img-vetor-footer {
-  position: absolute;
-  bottom: 0;
-  right: 25%;
-  width: 80%;
-  height: 30%;
-  z-index: 1;
-}
-
-.field-sobre {
-  width: 100%;
-  height: 800px;
-  background: #00283d;
-  position: relative;
-}
-.field-sobre img {
-  position: absolute;
-  right: -20%;
-  bottom: 0;
-  width: 950px;
-  filter: drop-shadow(0 0 115px rgb(0, 65, 117));
-}
-
-.field-lists {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-
 .menu {
   width: 100%;
   display: flex;
@@ -260,7 +165,7 @@ ul li {
   color: #333;
 }
 
-.field-cadastrar {
+.field-forms {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -268,37 +173,46 @@ ul li {
   background: white;
   position: relative;
 }
-.field-cadastrar .position-field-cadastrar {
+.field-forms .position-field-forms {
   width: 75%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.field-cadastrar .position-field-cadastrar .field-dropdown-options {
+.field-forms .position-field-forms hr {
+  border: none;
+  width: 2px;
+  height: 450px;
+  margin-left: 45%;
+  background: rgba(128, 128, 128, 0.16);
+  margin-right: 100px;
+}
+
+.position-field-forms .field-dropdown-options {
   position: absolute;
   top: 90px;
   left: 5%;
   cursor: pointer;
 }
-.field-cadastrar .position-field-cadastrar .field-dropdown-options .btn-options {
+.position-field-forms .field-dropdown-options .btn-options {
   padding: 7px 25px;
   background: #0089ff;
   color: white;
   border-radius: 15px;
 }
-.field-cadastrar .position-field-cadastrar .field-dropdown-options .btn-options:hover {
+.position-field-forms .field-dropdown-options .btn-options:hover {
   transition: 1s;
   opacity: 50%;
 }
-.field-cadastrar .position-field-cadastrar .field-dropdown-options .btn-options:active {
+.position-field-forms .field-dropdown-options .btn-options:active {
   transition: 0.1s;
   opacity: 100%;
   background: #ec681b;
 }
-.field-cadastrar .position-field-cadastrar .field-dropdown-options ul {
+.position-field-forms .field-dropdown-options ul {
   z-index: 99;
 }
-.field-cadastrar .position-field-cadastrar .field-dropdown-options ul li {
+.position-field-forms .field-dropdown-options ul li {
   color: #333;
   z-index: 99;
   cursor: pointer;
@@ -307,15 +221,17 @@ ul li {
   border-radius: 15px;
   margin: 10px;
 }
-.field-cadastrar .position-field-cadastrar .field-dropdown-options ul li:hover {
-  transition: 1s;
-  border: 2px solid rgba(167, 167, 167, 0.39);
+.position-field-forms .field-dropdown-options ul li:hover {
+  transition: 2s;
+  color: #ec681b;
+  font-weight: bold;
 }
-.field-cadastrar .position-field-cadastrar > div {
+.position-field-forms > div {
   display: flex;
   align-items: center;
+  margin-right: 4%;
 }
-.field-cadastrar .position-field-cadastrar > div form {
+.position-field-forms > div form {
   position: absolute;
   width: 30vw;
   padding: 60px;
@@ -326,16 +242,17 @@ ul li {
   border-radius: 5px;
   margin-bottom: 30px;
 }
-.field-cadastrar .position-field-cadastrar > div form h1 {
+.position-field-forms > div form h1 {
   font-size: 25px;
   color: rgb(3, 42, 72);
   margin-bottom: 30px;
+  font-weight: normal;
 }
-.field-cadastrar .position-field-cadastrar > div form div {
+.position-field-forms > div form div {
   width: 100%;
   margin-bottom: 30px;
 }
-.field-cadastrar .position-field-cadastrar > div form div::after {
+.position-field-forms > div form div::after {
   content: "";
   display: block;
   height: 1px;
@@ -343,13 +260,13 @@ ul li {
   background: rgba(201, 201, 201, 0.563);
   border-radius: 10px;
 }
-.field-cadastrar .position-field-cadastrar > div form div label {
+.position-field-forms > div form div label {
   text-align: start;
   margin-right: 10px;
   color: #333;
   font-size: 14px;
 }
-.field-cadastrar .position-field-cadastrar > div form div .input-text {
+.position-field-forms > div form div .input-text {
   margin-top: 5px;
   padding: 5px;
   border-radius: 5px;
@@ -357,16 +274,16 @@ ul li {
   outline: none;
   width: 97%;
 }
-.field-cadastrar .position-field-cadastrar > div form div .input-text::-moz-placeholder {
+.position-field-forms > div form div .input-text::-moz-placeholder {
   color: rgba(128, 128, 128, 0.522);
 }
-.field-cadastrar .position-field-cadastrar > div form div .input-text:-ms-input-placeholder {
+.position-field-forms > div form div .input-text:-ms-input-placeholder {
   color: rgba(128, 128, 128, 0.522);
 }
-.field-cadastrar .position-field-cadastrar > div form div .input-text::placeholder {
+.position-field-forms > div form div .input-text::placeholder {
   color: rgba(128, 128, 128, 0.522);
 }
-.field-cadastrar .position-field-cadastrar > div form .btn-submit {
+.position-field-forms > div form .btn-submit {
   padding: 10px 30px;
   width: 100%;
   border-radius: 5px;
@@ -377,65 +294,63 @@ ul li {
   color: white;
   font-weight: bold;
 }
-.field-cadastrar .position-field-cadastrar > div form .btn-submit:hover {
+.position-field-forms > div form .btn-submit:hover {
   transition: 1s;
   background: #0089ff;
 }
-.field-cadastrar .position-field-cadastrar > div form .btn-submit:active {
+.position-field-forms > div form .btn-submit:active {
   transition: 0.1s;
   background: black;
 }
-.field-cadastrar .position-field-cadastrar > div form h5 {
+.position-field-forms > div form h5 {
   margin-top: 30px;
   font-size: 20px;
   font-weight: normal;
   color: #007200;
 }
-.field-cadastrar .position-field-cadastrar > div form:nth-child(2) {
+.position-field-forms > div form:nth-child(2) {
   display: none;
 }
-.field-cadastrar .position-field-cadastrar > div form:nth-child(3) {
+.position-field-forms > div form:nth-child(3) {
   display: none;
 }
-.field-cadastrar .position-field-cadastrar p {
+.position-field-forms p {
   width: 55%;
   display: flex;
   align-items: center;
   color: rgba(51, 51, 51, 0.692);
   font-size: 15px;
 }
-.field-cadastrar .position-field-cadastrar p::before {
-  content: "";
-  display: block;
-  width: 2px;
-  height: 450px;
-  background: rgba(128, 128, 128, 0.16);
-  margin-right: 100px;
-}
 
-.listar:nth-child(2) {
+.field-lists {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.field-lists .listar:nth-child(2) {
   margin-top: 100px;
 }
-
-.listar {
+.field-lists .listar {
   width: 70vw;
   height: auto;
   display: none;
   background: none;
   box-shadow: none;
 }
-.listar > div {
+.field-lists .listar > div {
   width: 95%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.listar > div div {
+.field-lists .listar > div div {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
-.listar > div div .tabela {
+.field-lists .listar > div div .tabela {
   text-align: start;
   margin-bottom: 15px;
   color: #565656;
@@ -443,26 +358,26 @@ ul li {
   font-size: 30px;
   margin-left: 70px;
 }
-.listar > div div .btn-ocultar {
+.field-lists .listar > div div .btn-ocultar {
   font-size: 20px;
   font-weight: bolder;
   cursor: pointer;
   color: #008eff;
 }
-.listar > div table {
+.field-lists .listar > div table {
   width: 100%;
   margin-bottom: 100px;
 }
-.listar > div table tr {
+.field-lists .listar > div table tr {
   box-shadow: 0px 50px 80px rgb(60, 60, 60);
 }
-.listar > div table tr th {
+.field-lists .listar > div table tr th {
   color: white;
   padding: 10px 40px;
   background: #008eff;
   border-radius: 5px;
 }
-.listar > div table tr td {
+.field-lists .listar > div table tr td {
   color: gray;
   text-align: center;
   padding: 10px 40px;
@@ -525,4 +440,219 @@ footer .footer_position .btn_rodape div input {
 footer .footer_position .btn_rodape div input:hover {
   background: #3fa5b1;
   transition: 1s;
+}
+
+.field-sobre {
+  width: 100%;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  background: #00283d;
+  position: relative;
+}
+.field-sobre .position-field-sobre {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.field-sobre .position-field-sobre h1 {
+  color: white;
+  margin-bottom: 30px;
+}
+.field-sobre .position-field-sobre h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 5px;
+  border-radius: 10px;
+  background: white;
+  margin-top: 5px;
+}
+.field-sobre .position-field-sobre div {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  padding: 15px;
+  border-top: 1px solid rgba(128, 128, 128, 0.1);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+  margin-bottom: 15px;
+}
+.field-sobre .position-field-sobre div img {
+  width: 25px;
+  opacity: 70%;
+  margin-right: 10px;
+}
+.field-sobre .position-field-sobre div p {
+  color: rgba(255, 255, 255, 0.684);
+}
+.field-sobre .position-field-sobre p {
+  width: 45%;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.3058823529);
+}
+.field-sobre .position-field-sobre #btn-cadastrar {
+  font-size: 20px;
+  margin-top: 30px;
+  font-weight: bold;
+  color: #3fa5b1;
+  text-decoration: underline;
+}
+.field-sobre .position-field-sobre #gif-planeta {
+  position: absolute;
+  right: -20%;
+  bottom: 0;
+  width: 950px;
+  filter: drop-shadow(0 0 115px rgb(0, 65, 117));
+}
+
+.landing-page {
+  width: 100%;
+  height: 100vh;
+  background: url(https://i.postimg.cc/rwtPQMfY/Sem-T-tulo-1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.landing-page .field-landing-page {
+  width: 60%;
+  margin-top: 70px;
+}
+.landing-page .field-landing-page h1:nth-child(1) {
+  color: white;
+  font-size: 35px;
+}
+.landing-page .field-landing-page h1:nth-child(2) {
+  color: white;
+  font-size: 70px;
+}
+.landing-page .field-landing-page a {
+  background: white;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 210px;
+  margin-top: 15px;
+  border-radius: 7px;
+  font-weight: bold;
+  color: #214c66;
+}
+.landing-page .field-landing-page a:hover {
+  transition: 1s;
+  background: rgba(255, 255, 255, 0.248);
+  color: white;
+}
+.landing-page .field-landing-page #img-aluna {
+  position: absolute;
+  bottom: 0;
+  right: 12vw;
+  width: 45vw;
+  z-index: 2;
+}
+.landing-page .field-landing-page #img-vetor-footer {
+  position: absolute;
+  bottom: 0;
+  right: 25%;
+  width: 80%;
+  height: 30%;
+  z-index: 1;
+}
+
+.btn-top {
+  position: fixed;
+  right: 2vw;
+  top: 88vh;
+  background: #444444;
+  padding: 12px 10px;
+  border-radius: 5px;
+  z-index: 100;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.btn-top img {
+  width: 17px;
+}
+
+.position-field-forms .excluir {
+  align-items: center;
+  position: absolute;
+  right: 35%;
+  display: none;
+  z-index: 10;
+}
+.position-field-forms .excluir form {
+  width: 25vw;
+  padding: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+}
+.position-field-forms .excluir form h1 {
+  font-size: 25px;
+  font-weight: normal;
+  color: rgb(3, 42, 72);
+  margin-bottom: 30px;
+}
+.position-field-forms .excluir form div {
+  width: 100%;
+  margin-bottom: 30px;
+}
+.position-field-forms .excluir form div::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: rgba(201, 201, 201, 0.563);
+  border-radius: 10px;
+}
+.position-field-forms .excluir form div label {
+  text-align: start;
+  margin-right: 10px;
+  color: #333;
+  font-size: 14px;
+}
+.position-field-forms .excluir form div .input-text {
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  width: 97%;
+}
+.position-field-forms .excluir form div .input-text::-moz-placeholder {
+  color: rgba(128, 128, 128, 0.522);
+}
+.position-field-forms .excluir form div .input-text:-ms-input-placeholder {
+  color: rgba(128, 128, 128, 0.522);
+}
+.position-field-forms .excluir form div .input-text::placeholder {
+  color: rgba(128, 128, 128, 0.522);
+}
+.position-field-forms .excluir form .btn-submit-excluir {
+  padding: 10px 30px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 5px;
+  background: #ec681b;
+  color: white;
+  font-weight: bold;
+}
+.position-field-forms .excluir form .btn-submit-excluir:hover {
+  transition: 1s;
+  background: #0089ff;
+}
+.position-field-forms .excluir form .btn-submit-excluir:active {
+  transition: 0.1s;
+  background: black;
 }/*# sourceMappingURL=main.css.map */

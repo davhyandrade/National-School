@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BD Escola</title>
+    <title>National School</title>
     <link rel="stylesheet" href="assets/css/main.css">
     <script src="assets/js/script.js" defer></script>
     <script src="assets/js/button-top.js" defer></script>
     <script src="assets/js/pop-up-escola.js" defer></script>
-    <script src="assets/js/pop-up.js" defer></script>
-    <!--Favicon-->
+    <!-- <script src="assets/js/pop-up.js" defer></script> -->
     <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
-    <!--Favicon-->
 </head>
 <body>
        
@@ -28,14 +26,11 @@
                     <li>
                         <a id="btn-cadastrar">Cadastrar</a>
                     </li>
-                    <a>Pesquisar</a>
                     <li>
-                        <a>Excluir</a>
-                        <ul>
-                            <li><a href="">Aluno</a></li>
-                            <li><a href="">Disciplinas</a></li>
-                            <li><a href="">Curso</a></li>
-                        </ul>
+                        <a>Pesquisar</a>
+                    </li>
+                    <li>
+                        <a id="btn-excluir">Excluir</a>
                     </li>
                     <li>
                         <a>Alterar</a>
@@ -67,8 +62,8 @@
 
     </section>
 
-    <section class="field-cadastrar">
-        <div class="position-field-cadastrar">
+    <section class="field-forms">
+        <div class="position-field-forms">
 
             <div class="field-dropdown-options">
                 <li>
@@ -185,7 +180,72 @@
                 </form>
             </div>
 
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. <br><br> Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. <br><br> Vivamus a tellus.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. <br><br> Donec laoreet nonummy augue. br Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.</p>
+            <hr id="linha-vertical">
+
+            <p id="txt-forms">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. <br><br> Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. <br><br> Vivamus a tellus.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. <br><br> Donec laoreet nonummy augue. br Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.</p>
+                    
+            <div class="excluir">
+                <form method="POST">
+                    <h1>Excluir Alunos</h1>
+                    <div>
+                        <label for="input-matricula-excluir">Id Aluno</label>
+                        <input name="input_matricula_excluir" id="input-matricula-excluir" class="input-text" type="number" placeholder="Digite o Id do aluno" required>
+                    </div>
+                    <input name="btn_submit_excluir" class="btn-submit-excluir" type="submit">
+                    <?php 
+                        extract($_POST, EXTR_OVERWRITE);
+                        
+                        if(isset($btn_submit_excluir)) {
+                            include_once 'assets/php/escola.php';
+                            $aluno = new aluno(); 
+                            $aluno->setMatricula($input_matricula_excluir);
+                            $aluno->excluir();
+                        }
+                    ?>
+                </form>
+            </div>
+
+            <div class="excluir">
+                <form method="POST">
+                    <h1>Excluir Disciplinas</h1>
+                    <div>
+                        <label for="input-id-excluir">Id Disciplina</label>
+                        <input name="input_id_excluir" id="input-id-excluir" class="input-text" type="number" placeholder="Digite o Id da Disciplina" required>
+                    </div>
+                    <input name="btn_submit_excluir2" class="btn-submit-excluir" type="submit">
+                    <?php 
+                        extract($_POST, EXTR_OVERWRITE);
+                        
+                        if(isset($btn_submit_excluir2)) {
+                            include_once 'assets/php/escola.php';
+                            $disciplinas = new disciplinas(); 
+                            $disciplinas->setId($input_id_excluir);
+                            $disciplinas->excluir();
+                        }
+                    ?>
+                </form>
+            </div>
+
+            <div class="excluir">
+                <form method="POST">
+                    <h1>Excluir Cursos</h1>
+                    <div>
+                        <label for="input-codigo-curso-excluir">Id Curso</label>
+                        <input name="input_codigo_curso_excluir" id="input-codigo-curso-excluir" class="input-text" type="number" placeholder="Digite o Id do Cursos" required>
+                    </div>
+                    <input name="btn_submit_excluir" class="btn-submit-excluir" type="submit">
+                    <?php 
+                        extract($_POST, EXTR_OVERWRITE);
+                        
+                        if(isset($btn_submit_excluir)) {
+                            include_once 'assets/php/escola.php';
+                            $curso = new curso(); 
+                            $curso->setCodCurso($input_codigo_curso_excluir);
+                            $curso->excluir();
+                        }
+                    ?>
+                </form>
+            </div>
         </div>
     </section>
     
@@ -298,7 +358,20 @@
     </section>
 
     <section class="field-sobre">
-        <img src="https://i.postimg.cc/0jZGCfkv/Contra-Internet-Bottom.gif" alt="Planeta">
+        <div class="position-field-sobre">
+            <h1>Sobre</h1>
+            <div>
+                <img src="https://i.postimg.cc/597sHWyg/calendario.png" alt="Vetor">
+                <p>21 March 2016</p>
+                <img src="https://i.postimg.cc/BQwnbgdk/local.png" alt="Vetor">
+                <p>São Paulo</p>
+                <img src="https://i.postimg.cc/sxLCjnvJ/loja.png" alt="Vetor">
+                <p>School</p>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.</p>
+            <a id="btn-cadastrar">Register</a>
+            <img id='gif-planeta' src="https://i.postimg.cc/0jZGCfkv/Contra-Internet-Bottom.gif" alt="Planeta">
+        </div>
     </section>
 
     <footer>
@@ -306,8 +379,8 @@
             <div class="footer_position">
                 <div>
                     <div class="btn_txt">
-                        <a href="menu_escola.html">Home</a>
-                        <a id="btn_footer_contact" href="https://davhyandrade.vercel.app/">Contact</a>
+                        <a href="index.php">Home</a>
+                        <a id="btn_footer_contact" href="https://davhyandrade.com.br/">Contact</a>
                         <a id="btn_footer_about">About</a>
                         <a id="btn_footer_Home_screen">Home screen</a>
                         <a href="">Reload</a>
