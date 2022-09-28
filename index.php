@@ -28,6 +28,11 @@
                     </li>
                     <li>
                         <a>Pesquisar</a>
+                        <ul>
+                            <li><a id="btn-consultar-alunos">Alunos</a></li>
+                            <li><a id="btn-consultar-disciplinas">Disciplinas</a></li>
+                            <li><a id="btn-consultar-cursos">Cursos</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a id="btn-excluir">Excluir</a>
@@ -245,6 +250,125 @@
                         }
                     ?>
                 </form>
+            </div>
+
+            <div id="consultar">
+                <form method="POST">
+                    <h1>Pesquisar Aluno</h1>
+                    <div>
+                        <label for="input-nome-consultar">Nome</label>
+                        <input name="input_nome_consultar" id="input-nome-consultar" class="input-text" type="text" placeholder="Digite o nome do produto" required>
+                    </div>
+                    <input name="btn_submit_consultar_aluno" class="btn-submit-consultar" type="submit">
+                </form>
+
+                <table>
+                    <?php 
+                        extract($_POST, EXTR_OVERWRITE);
+                        
+                        if(isset($btn_submit_consultar_aluno)) {
+                            include_once 'assets/php/escola.php';
+                            $aluno = new aluno(); 
+                            $aluno->setNome("%" . $input_nome_consultar . "%");
+                            $aluno_bd=$aluno->consultar();
+
+                            echo "<tr>
+                                    <th>Matricula</th>
+                                    <th>Nome</th>
+                                    <th>Endereço</th>
+                                    <th>Cidade</th>
+                                    <th>Código Curso</th>
+                                </tr>";
+                                
+                            foreach($aluno_bd as $aluno_mostrar) {
+                                echo "<tr>
+                                        <td>$aluno_mostrar[0]</td>
+                                        <td>$aluno_mostrar[1]</td>
+                                        <td>$aluno_mostrar[2]</td>
+                                        <td>$aluno_mostrar[3]</td>
+                                        <td>$aluno_mostrar[4]</td>
+                                    </tr>";
+                            }
+                        }
+                    ?>   
+                </table>
+            </div>
+
+            <div id="consultar">
+                <form method="POST">
+                    <h1>Pesquisar Curso</h1>
+                    <div>
+                        <label for="input-nome-consultar">Nome</label>
+                        <input name="input_nome_consultar" id="input-nome-consultar" class="input-text" type="text" placeholder="Digite o nome do produto" required>
+                    </div>
+                    <input name="btn_submit_consultar_curso" class="btn-submit-consultar" type="submit">
+                </form>
+
+                <table>
+                    <?php 
+                        extract($_POST, EXTR_OVERWRITE);
+                        
+                        if(isset($btn_submit_consultar_curso)) {
+                            include_once 'assets/php/escola.php';
+                            $curso = new curso(); 
+                            $curso->setNome("%" . $input_nome_consultar . "%");
+                            $curso_bd=$curso->consultar();
+
+                            echo "<tr>
+                                    <th>Código</th>
+                                    <th>Nome</th>
+                                    <th>Código Disciplina 1</th>
+                                    <th>Código Disciplina 2</th>
+                                    <th>Código Disciplina 3</th>
+                                </tr>";
+                                
+                            foreach($curso_bd as $curso_mostrar) {
+                                echo "<tr>
+                                        <td>$curso_mostrar[0]</td>
+                                        <td>$curso_mostrar[1]</td>
+                                        <td>$curso_mostrar[2]</td>
+                                        <td>$curso_mostrar[3]</td>
+                                        <td>$curso_mostrar[4]</td>
+                                    </tr>";
+                            }
+                        }
+                    ?>   
+                </table>
+            </div>
+            <div id="consultar">
+                <form method="POST">
+                    <h1>Pesquisar Disciplinas</h1>
+                    <div>
+                        <label for="input-nome-consultar">Nome</label>
+                        <input name="input_nome_consultar_disciplinas" id="input-nome-consultar" class="input-text" type="text" placeholder="Digite o nome do produto" required>
+                    </div>
+                    <input name="btn_submit_consultar_disciplinas" class="btn-submit-consultar" type="submit">
+                </form>
+
+                <table>
+                    <?php 
+                        extract($_POST, EXTR_OVERWRITE);
+                        
+                        if(isset($btn_submit_consultar_disciplinas)) {
+                            include_once 'assets/php/escola.php';
+                            $disciplinas = new disciplinas(); 
+                            $disciplinas->setNome("%" . $input_nome_consultar_disciplinas . "%");
+                            $disciplinas_bd=$disciplinas->consultar();
+
+                            echo "<tr>
+                                    <th>Código</th>
+                                    <th>Nome</th>
+                                </tr>";
+                                
+                            foreach($disciplinas_bd as $disciplinas_mostrar) {
+                                echo "<tr>
+                                        <td>$disciplinas_mostrar[0]</td>
+                                        <td>$disciplinas_mostrar[1]</td>
+                                    </tr>";
+                            }
+                        }
+                    ?>   
+                </table>
             </div>
         </div>
     </section>

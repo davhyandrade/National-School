@@ -369,7 +369,7 @@ ul li {
   margin-bottom: 100px;
 }
 .field-lists .listar > div table tr {
-  box-shadow: 0px 50px 80px rgb(60, 60, 60);
+  filter: drop-shadow(0 10px 15px rgba(128, 128, 128, 0.467));
 }
 .field-lists .listar > div table tr th {
   color: white;
@@ -655,4 +655,102 @@ footer .footer_position .btn_rodape div input:hover {
 .position-field-forms .excluir form .btn-submit-excluir:active {
   transition: 0.1s;
   background: black;
+}
+
+#consultar {
+  display: none;
+}
+#consultar form {
+  width: 32vw;
+  padding: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+  margin-bottom: 200px;
+}
+#consultar form h1 {
+  font-size: 25px;
+  font-weight: normal;
+  color: #333;
+  margin-bottom: 30px;
+}
+#consultar form div {
+  width: 100%;
+  margin-bottom: 30px;
+}
+#consultar form div::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: rgba(201, 201, 201, 0.563);
+  border-radius: 10px;
+}
+#consultar form div label {
+  text-align: start;
+  margin-right: 10px;
+  color: #333;
+  font-size: 14px;
+}
+#consultar form div .input-text {
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  width: 97%;
+}
+#consultar form div .input-text::-moz-placeholder {
+  color: rgba(128, 128, 128, 0.522);
+}
+#consultar form div .input-text:-ms-input-placeholder {
+  color: rgba(128, 128, 128, 0.522);
+}
+#consultar form div .input-text::placeholder {
+  color: rgba(128, 128, 128, 0.522);
+}
+#consultar form .btn-submit-consultar {
+  padding: 10px 30px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 5px;
+  background: #ec681b;
+  color: white;
+  font-weight: bold;
+}
+#consultar form .btn-submit-consultar:hover {
+  transition: 1s;
+  background: #0089ff;
+}
+#consultar form .btn-submit-consultar:active {
+  transition: 0.1s;
+  background: black;
+}
+#consultar table {
+  width: 45%;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  z-index: 99;
+}
+#consultar table tr {
+  filter: drop-shadow(0 10px 15px rgba(128, 128, 128, 0.467));
+}
+#consultar table tr th {
+  color: white;
+  padding: 10px 40px;
+  background: #008eff;
+  border-radius: 5px;
+}
+#consultar table tr td {
+  color: gray;
+  text-align: center;
+  padding: 10px 40px;
+  background: white;
+  border-radius: 5px;
+  font-size: 15px;
 }/*# sourceMappingURL=main.css.map */

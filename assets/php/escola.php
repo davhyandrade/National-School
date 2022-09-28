@@ -103,6 +103,19 @@ class aluno
             echo "Erro ao excluir - " . $exc->getMessage();
         }
     }
+
+    function consultar() {
+        try {
+            $this->conn = new Conectar();
+            $sql = $this->conn->prepare("select * from aluno where Nome like ?");
+            @$sql-> bindParam(1, $this->getNome(), PDO::PARAM_STR);
+            $sql->execute();
+            return $sql->fetchAll();
+            $this->conn = null;
+        } catch(PDOException $exc) {
+            echo "Erro ao executar consulta - " . $exc->getMessage();
+        }
+    }
 } 
 
 class curso
@@ -206,6 +219,19 @@ class curso
             echo "Erro ao excluir - " . $exc->getMessage();
         }
     }
+
+    function consultar() {
+        try {
+            $this->conn = new Conectar();
+            $sql = $this->conn->prepare("select * from curso where Nome like ?");
+            @$sql-> bindParam(1, $this->getNome(), PDO::PARAM_STR);
+            $sql->execute();
+            return $sql->fetchAll();
+            $this->conn = null;
+        } catch(PDOException $exc) {
+            echo "Erro ao executar consulta - " . $exc->getMessage();
+        }
+    }
 } 
 
 class disciplinas
@@ -277,6 +303,19 @@ class disciplinas
         }
         catch(PDOException $exc) {
             echo "Erro ao excluir - " . $exc->getMessage();
+        }
+    }
+
+    function consultar() {
+        try {
+            $this->conn = new Conectar();
+            $sql = $this->conn->prepare("select * from disciplinas where Nome_Disciplina like ?");
+            @$sql-> bindParam(1, $this->getNome(), PDO::PARAM_STR);
+            $sql->execute();
+            return $sql->fetchAll();
+            $this->conn = null;
+        } catch(PDOException $exc) {
+            echo "Erro ao executar consulta - " . $exc->getMessage();
         }
     }
 } 

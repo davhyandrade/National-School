@@ -173,9 +173,14 @@ buttonAlunos.addEventListener('click', () => {
   fieldsExcluir[0].style.display = 'flex';
   fieldsExcluir[1].style.display = 'none';
   fieldsExcluir[2].style.display = 'none';
+  
+  fieldConsultar.forEach((element) => {
+    element.style.display = 'none';
+  })
 
   textoFieldForms.style.display = 'none';
   linhaVertical.style.marginRight = '49%';
+
 });
 
 buttonDisciplinas.addEventListener('click', () => {
@@ -187,6 +192,10 @@ buttonDisciplinas.addEventListener('click', () => {
   fieldsExcluir[1].style.display = 'flex';
   fieldsExcluir[0].style.display = 'none';
   fieldsExcluir[2].style.display = 'none';
+
+  fieldConsultar.forEach((element) => {
+    element.style.display = 'none';
+  })
 
   textoFieldForms.style.display = 'none';
   linhaVertical.style.marginRight = '49%';
@@ -201,6 +210,10 @@ buttonCursos.addEventListener('click', () => {
   fieldsExcluir[2].style.display = 'flex';
   fieldsExcluir[0].style.display = 'none';
   fieldsExcluir[1].style.display = 'none';
+
+  fieldConsultar.forEach((element) => {
+    element.style.display = 'none';
+  })
 
   textoFieldForms.style.display = 'none';
   linhaVertical.style.marginRight = '49%';
@@ -223,18 +236,88 @@ buttonExcluir.addEventListener('click', () => {
 
   if(isActiveButtonExcluir) {
     isActiveButtonExcluir = false;
+    formExcluir.forEach((element) => {
+      element.style.display = 'none';
+    })
     formExcluir[0].style.display = 'flex';
-    formExcluir[1].style.display = 'none';
-    formExcluir[2].style.display = 'none';
     textoFieldForms.style.display = 'none';
     linhaVertical.style.marginRight = '49%';
   } else {
     isActiveButtonExcluir = true;
-    formExcluir[0].style.display = 'none';
-    formExcluir[1].style.display = 'none';
-    formExcluir[2].style.display = 'none';
+    formExcluir.forEach((element) => {
+      element.style.display = 'none';
+    })
     textoFieldForms.style.display = 'flex';
     linhaVertical.style.marginRight = '100px';
   }
+});
+
+//===================================================================
+
+//----------------< Button Consultar >
+
+const buttonConsultarAlunos = document.querySelector('#btn-consultar-alunos');
+const buttonConsultarCursos = document.querySelector('#btn-consultar-cursos');
+const buttonConsultarDisciplinas = document.querySelector('#btn-consultar-disciplinas');
+const fieldConsultar = document.querySelectorAll('#consultar');
+
+buttonConsultarAlunos.addEventListener('click', () => {
+  window.scrollTo({
+    top: 900,
+    left:0
+  })
+
+  textoFieldForms.style.display = 'none';
+  formExcluir.forEach((element) => {
+    element.style.display = 'none';
+  })
+  fieldsCadastro.forEach((element) => {
+    element.style.display = 'none';
+  })
+  fieldConsultar.forEach((element) => {
+    element.style.display = 'none';
+  })
+  fieldConsultar[0].style.display = 'contents';
+  linhaVertical.style.marginRight = '49%';
+});
+
+buttonConsultarCursos.addEventListener('click', () => {
+  window.scrollTo({
+    top: 900,
+    left:0
+  })
+
+  textoFieldForms.style.display = 'none';
+  formExcluir.forEach((element) => {
+    element.style.display = 'none';
+  })
+  fieldsCadastro.forEach((element) => {
+    element.style.display = 'none';
+  })
+  fieldConsultar.forEach((element) => {
+    element.style.display = 'none';
+  })
+  fieldConsultar[1].style.display = 'contents';
+  linhaVertical.style.marginRight = '49%';
+});
+
+buttonConsultarDisciplinas.addEventListener('click', () => {
+  window.scrollTo({
+    top: 900,
+    left:0
+  })
+
+  textoFieldForms.style.display = 'none';
+  formExcluir.forEach((element) => {
+    element.style.display = 'none';
+  })
+  fieldsCadastro.forEach((element) => {
+    element.style.display = 'none';
+  })
+  fieldConsultar.forEach((element) => {
+    element.style.display = 'none';
+  })
+  fieldConsultar[2].style.display = 'contents';
+  linhaVertical.style.marginRight = '49%';
 });
 
