@@ -20,7 +20,9 @@ Basicamente este projeto está sendo cobrado todas as funcinalidades básicas de
 
 * Create, Read, Update, Delete
 
-- `Create || Cadastrar` 
+#
+
+    Create || Cadastrar
 
 ```js
     function salvar() {
@@ -43,7 +45,9 @@ Basicamente este projeto está sendo cobrado todas as funcinalidades básicas de
     }
 ```
 
-- `Read || Listar` 
+#
+
+    Read || Listar
 
 ```js
     function listar() {
@@ -59,6 +63,45 @@ Basicamente este projeto está sendo cobrado todas as funcinalidades básicas de
     }
 ```
 
-- `Update || Alterar` 
+#
 
+    Delete || Excluir
 
+```js
+    function excluir() {
+        try {
+            $this->conn = new Conectar();
+            $sql = $this->conn->prepare("delete from aluno where Matricula = ?");
+            @$sql-> bindParam(1, $this->getMatricula(), PDO::PARAM_STR);
+            if($sql->execute() == 1) {
+                return "Excluido com sucesso!!";
+            } else {
+                return "Erro na exclusao!!";
+            }
+
+            $this->conn = null;
+        }
+        catch(PDOException $exc) {
+            echo "Erro ao excluir - " . $exc->getMessage();
+        }
+    }
+```
+
+#
+
+    Pesquisar
+
+```js
+    function consultar() {
+        try {
+            $this->conn = new Conectar();
+            $sql = $this->conn->prepare("select * from aluno where Nome like ?");
+            @$sql-> bindParam(1, $this->getNome(), PDO::PARAM_STR);
+            $sql->execute();
+            return $sql->fetchAll();
+            $this->conn = null;
+        } catch(PDOException $exc) {
+            echo "Erro ao executar consulta - " . $exc->getMessage();
+        }
+    }
+```
