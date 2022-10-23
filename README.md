@@ -4,9 +4,9 @@
 
 ## National-School
 
-<img src="https://i.postimg.cc/prgzH5Yy/bank-small.png" alt="bank-small" width="100%">
-
 Projeto proposto pela matéria PW2 da Etec Zona Leste, ao qual consiste no desenvolvimento de um CRUD com MySQL e PHP com a temática de Escola.
+
+![screencapture-localhost-pw-2022-10-23-12_02_31](https://user-images.githubusercontent.com/109045257/197399673-1b5b3770-82e6-455a-be18-d1682defbf62.png)
 
 # Desenvolvimento
 
